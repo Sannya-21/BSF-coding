@@ -1,0 +1,20 @@
+graph G {
+layout=neato;
+overlap=false;
+splines=true;
+"Cloud Security Platform" -- "System Architect";
+"Cloud Security Platform" -- "DevOps Specialist";
+"Cloud Security Platform" -- "Security Analyst";
+"Cloud Security Platform" -- "Database Engineer";
+"Backend Engineer" -- "Cloud Security Platform";
+"Backend Engineer" -- "Mobile Banking Application";
+"AI Recommendation Engine" -- "Machine Learning Engineer";
+"AI Recommendation Engine" -- "Data Scientist";
+"AI Recommendation Engine" -- "Backend Engineer";
+"AI Recommendation Engine" -- "System Architect";
+"AI Recommendation Engine" -- "Product Manager";
+"Mobile Banking Application" -- "iOS Developer";
+"Mobile Banking Application" -- "Security Analyst";
+"Mobile Banking Application" -- "System Architect" [color=red, penwidth=3];
+"Android Developer" -- "Mobile Banking Application" [color=red, penwidth=3];
+}
