@@ -13,8 +13,8 @@ splines=true;
 "AI Recommendation Engine" -- "Backend Engineer";
 "AI Recommendation Engine" -- "System Architect";
 "AI Recommendation Engine" -- "Product Manager";
-"Mobile Banking Application" -- "iOS Developer";
+"Mobile Banking Application" -- "iOS Developer" [color=red, penwidth=3];
 "Mobile Banking Application" -- "Security Analyst";
 "Mobile Banking Application" -- "System Architect" [color=red, penwidth=3];
-"Android Developer" -- "Mobile Banking Application" [color=red, penwidth=3];
+"Android Developer" -- "Mobile Banking Application";
 }

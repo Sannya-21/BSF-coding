@@ -99,7 +99,6 @@ void exportToDot(Graph& graph, vector<Node*>& path) {
     file << "}\n";
     file.close();
 
-    // Automatically generate PNG
     system("dot -Tpng graph.dot -o graph.png");
 }
 
@@ -124,7 +123,6 @@ int main() {
     // Build Graph
     for (auto& item : data) {
         string project = item.first;
-
         graph.addNode(project);
 
         for (auto& role : item.second) {
@@ -134,14 +132,37 @@ int main() {
     }
 
     string startRole;
-    cout << "Enter your role: ";
+
+    cout << "\n========= AVAILABLE ROLES =========\n";
+    cout << "System Architect\n";
+    cout << "Backend Engineer\n";
+    cout << "DevOps Specialist\n";
+    cout << "Security Analyst\n";
+    cout << "Database Engineer\n";
+    cout << "Machine Learning Engineer\n";
+    cout << "Data Scientist\n";
+    cout << "Product Manager\n";
+    cout << "Android Developer\n";
+    cout << "iOS Developer\n";
+    cout << "====================================\n\n";
+
+    cout << "Enter your role EXACTLY as shown above: ";
     getline(cin, startRole);
+
+    // Remove leading spaces
+    while (!startRole.empty() && startRole.front() == ' ')
+        startRole.erase(startRole.begin());
+
+    // Remove trailing spaces
+    while (!startRole.empty() && startRole.back() == ' ')
+        startRole.pop_back();
 
     Node* start = graph.getNode(startRole);
     Node* end = graph.getNode("System Architect");
 
     if (!start || !end) {
-        cout << "Invalid role entered.\n";
+        cout << "\n❌ Invalid role entered.\n";
+        cout << "Please enter the role exactly as displayed above.\n";
         return 0;
     }
 
@@ -177,7 +198,7 @@ int main() {
         temp = temp->parent;
     }
 
-    cout << "\nShortest Collaboration Path:\n";
+    cout << "\n========== SHORTEST COLLABORATION PATH ==========\n";
     for (int i = path.size() - 1; i >= 0; i--) {
         cout << path[i]->value;
         if (i != 0) cout << " --> ";
@@ -185,7 +206,8 @@ int main() {
 
     exportToDot(graph, path);
 
-    cout << "\nGraph visualization saved as graph.png\n";
+    cout << "\n\nGraph visualization saved as graph.png\n";
+    cout << "=================================================\n";
 
     return 0;
 }

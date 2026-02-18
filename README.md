@@ -83,9 +83,7 @@ O(V + E)
 Space Complexity:
 O(V)
 
-Where:
 
----
 
 ##  Academic Relevance
 
@@ -102,16 +100,6 @@ Data Structures course
 
 ---
 
-##  Sample Output
-
-Enter your role: Android Developer
-
-Shortest Collaboration Path:
-Android Developer --> Mobile Banking Application --> System Architect
-
-Graph visualization saved as graph.png
-
----
 
 
 
